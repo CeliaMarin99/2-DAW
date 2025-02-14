@@ -1,0 +1,59 @@
+<div>
+  <p>Tu nombre es {{nombre}}</p>
+  
+  <p>Edad {{edad}}</p>
+  <p>{{esFumador()}}</p>
+
+  <h3>Directiva *ngIf</h3>
+  <p *ngIf="edad>=18; else menor">Es mayor de edad.</p>
+  <ng-template #menor></ng-template>
+
+
+  <h3>Directiva *ngFor</h3>
+
+  <table border="1">
+    <tr>
+      <td>Sueldos</td>
+    </tr>
+    <tr *ngFor="let sueldo of sueldo">
+      <td>{{sueldo}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let sueldo of sueldo">{{sueldo}}</li>
+  </ul>
+</div>
+
+<select name="provincias" id="provincias">
+  <option *ngFor="let prov of provincias" value="{{prov.id}}">{{prov.nombre}}</option>
+</select>
+
+<table>
+
+  <tr>
+    <td>Nombre</td>
+    <td *ngFor="let prov of provincias">{{prov.nombre}}</td>
+  </tr>
+
+  <tr>
+    <td>Id</td>
+    <td *ngFor="let prov of provincias">{{prov.id}}</td>
+  </tr>
+</table>
+
+<h3>Captura de eventos</h3>
+<button (click)="diHola()">Di Hola</button>
+
+<h3>Contador</h3>
+<h1>{{contador}}</h1>
+<br>
+<button (click)="decrementar()">-</button>
+<button (click)="incrementar()">+</button>
+
+<div>
+  <h3>Directiva ngModek</h3>
+  <input type="text" [(ngModel)]="nombre" name="nombre">
+</div>
